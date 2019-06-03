@@ -33,25 +33,24 @@ public class ArrayUtils {
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
 
         Integer iCount = 0;
-        Object[] newOb = new Object[objectArray.length];
+        Object[] newObj = new Object[objectArray.length];
 
         for (Integer i = 0; i < objectArray.length; i++) {
 
-            objectArray[i] = new Object();
-
+      //      objectArray[i] = new Object();
+            System.out.println(objectArray[i] + "   "  + objectToRemove);
             if (objectArray[i] == objectToRemove) {
 
             }
             else {
-        //        newOb[iCount];
+                newObj[iCount] = objectArray[i] ;
                 iCount++;
             }
 
         }
 
-//  +++++++++++++++++++++++++++++++++++   fix
 
-        return newOb;
+        return newObj;
     }
 
     /**
