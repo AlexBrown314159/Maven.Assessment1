@@ -32,22 +32,22 @@ public class ArrayUtils {
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
 
-        Integer iCount = 0;
         Object[] newObj = new Object[objectArray.length];
 
+        Integer iCount = 0;
         for (Integer i = 0; i < objectArray.length; i++) {
 
-      //      objectArray[i] = new Object();
-            System.out.println(objectArray[i] + "   "  + objectToRemove);
             if (objectArray[i] == objectToRemove) {
-
+                System.out.println("Skip loop");
             }
             else {
+                System.out.println("Keep loop");
                 newObj[iCount] = objectArray[i] ;
                 iCount++;
             }
 
         }
+
 
 
         return newObj;
@@ -131,14 +131,27 @@ public class ArrayUtils {
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
 
+        Integer dim = objectArray.length + objectArrayToAdd.length;
 
+        Object[] str = new Object[dim];
 
+        Integer iCount = 0;
+        for (Integer i = 0; i < objectArray.length; i++) {
 
+            str[iCount] = objectArray[i];
+            System.out.println(str[iCount]);
+            iCount++;
+        }
 
+        for (Integer i = 0; i < objectArrayToAdd.length; i++) {
 
+            str[iCount] = objectArrayToAdd[i];
+            System.out.println(str[iCount]);
+            iCount++;
+        }
 
+//        str = ArrayUtils.mergeArrays(objectArray, objectArrayToAdd);
 
-
-        return null;
+        return str;
     }
 }
