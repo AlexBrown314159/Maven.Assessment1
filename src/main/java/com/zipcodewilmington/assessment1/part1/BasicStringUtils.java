@@ -13,22 +13,13 @@ public class BasicStringUtils {
 
         str1 = str;
         str2 = str;
-           //***********************************   fix
-        str2.toUpperCase();
 
         str1 = str1.substring(1);
         str2 = str2.substring(0,1);
 
-              str2.toUpperCase();
+        str3 = str2.toUpperCase();
 
-        str3 = str2.concat(str1);
-
-             System.out.println(str);
-              System.out.println(str1);
-                      System.out.println(str2);
-        System.out.println(str3);
-
-        return str3;
+        return str3.concat(str1);
     }
 
     /**
@@ -36,20 +27,17 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        Integer l;
-        l = str.length();
-        String str2;
-        char l2;
 
-          for (Integer i = 0; i < l; i++) {
+        String str2 = "";
+        char c;
 
-             //    l2 = str.toChar();
-              
-          }
+        for (Integer i = 0; i < str.length(); i++) {
+            c = str.charAt(i);
+            str2 = c + str2;
 
+        }
 
-
-        return null;
+        return str2;
     }
 
     /**
@@ -57,7 +45,23 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+        String str2 = "";
+        String str1 = "";
+        char c;
+
+        for (Integer i = 0; i < str.length()-1; i++) {
+            c = str.charAt(i);
+            str2 = c + str2;
+        }
+
+        str1 = str.toUpperCase();
+        c = str1.charAt(str.length()-1);
+
+        str2 = c + str2;
+
+
+
+        return str2;
     }
 
 
@@ -66,7 +70,15 @@ public class BasicStringUtils {
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        return null;
+        char c;
+        String str2 = "";
+
+        for (Integer i = 1; i < str.length()-1; i++) {
+            c = str.charAt(i);
+            str2 = str2 + c;
+        }
+
+        return str2;
     }
 
     /**
