@@ -13,15 +13,50 @@ public class RockPaperSissorsEvaluator {
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        return null;
+        String result = "";
+
+        if (handSign == "rock") {
+            result = "paper";
+        }
+
+        if (handSign == "scissor") {
+            result = "rock";
+        }
+
+        if (handSign == "paper") {
+            result = "scissor";
+        }
+
+            return result;
     }
+
+
+    // Rock loses to paper and wins to scissors,
+    // paper loses to scissors and wins to rock, and
+    // scissors lose to rock and win to paper
+
+
 
     /**
      * @param handSign a string representative of a hand sign
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+        String result = "";
+
+        if (handSign == "rock") {
+            result = "scissor";
+        }
+
+        if (handSign == "scissor") {
+            result = "paper";
+        }
+
+        if (handSign == "paper") {
+            result = "rock";
+        }
+
+        return result;
     }
 
     /**
