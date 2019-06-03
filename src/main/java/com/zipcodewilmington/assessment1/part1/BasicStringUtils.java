@@ -70,13 +70,13 @@ public class BasicStringUtils {
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        char c;
+
         String str2 = "";
 
-        for (Integer i = 1; i < str.length()-1; i++) {
-            c = str.charAt(i);
-            str2 = str2 + c;
-        }
+        str2 = str.substring(1,str.length()-1);
+
+
+        System.out.println(str2);
 
         return str2;
     }
@@ -86,6 +86,24 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+        String myStr = "";
+        char myC;
+
+        for (Integer i = 0; i < str.length(); i++) {
+
+            myC = str.charAt(i);
+            if (Character.isWhitespace(myC)) {
+
+            }
+            else if (Character.isUpperCase(myC)) {
+            
+                }
+            else if (Character.isLowerCase(myC)) {
+
+                }
+            myStr = myStr + myC;
+            }
+
+        return myStr;
     }
 }
