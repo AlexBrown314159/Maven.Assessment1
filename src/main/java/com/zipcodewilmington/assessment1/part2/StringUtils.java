@@ -12,33 +12,62 @@ public class StringUtils {
      */
     public static String[] getWords(String sentence) {
 
+     /*
+             String myStr = "";
+        char myC;
+
+        for (Integer i = 0; i < str.length(); i++) {
+
+            myC = str.charAt(i);
+            if (Character.isWhitespace(myC)) {
+
+            }
+            else if (Character.isUpperCase(myC)) {
+                myC = Character.toLowerCase(myC);
+            }
+            else if (Character.isLowerCase(myC)) {
+                myC = Character.toUpperCase(myC);
+            }
+            myStr = myStr + myC;
+            }
+
+        return myStr;
+
+  */
         Integer words = 0;
         Integer iCount = 0;
         String str = "";
         Integer pt1 = 0;
         Integer pt2 = 0;
+        char myC;
 
         for (Integer i = 0; i < sentence.length(); i++) {
-            str = sentence.substring(i, i+1);
-            if (str == " ") {
+            myC = sentence.charAt(i);
+            if (Character.isWhitespace(myC)) {
                 words++;
             }
         }
 
         String[] ans = new String[words + 1];
 
+        System.out.println(words+1);
 
-        for (Integer i = 0; i < sentence.length(); i++) {
-            str = sentence.substring(i, i+1);
-            if (str == " ") {
-                pt2 = i + 1;
-                ans[iCount] = sentence.substring(pt1, pt2);
-                System.out.println(ans[iCount]);
-                pt1 = pt2 + 1;
-                iCount++;
+            iCount = 0;
+            for (Integer i = 0; i < sentence.length(); i++) {
+                myC = sentence.charAt(i);
+                if (Character.isWhitespace(myC)) {
+                    pt2 = i;
+                    ans[iCount] = sentence.substring(pt1, pt2);
+                    System.out.println(ans[iCount]);
+                    pt1 = pt2 + 1;
+                    iCount++;
+                }
             }
-        }
-//      ==========================    fix
+
+
+            ans[iCount] = sentence.substring(pt1);
+
+
         return ans;
     }
 
@@ -52,38 +81,22 @@ public class StringUtils {
 
         Integer words = 0;
         Integer iCount = 0;
-        char myC;
         String str = "";
-        String str2 = "";
         Integer pt1 = 0;
         Integer pt2 = 0;
-/*
-        for (Integer i = 0; i < sentence.length(); i++) {
-            str = sentence.substring(i, i+1);
-            if (str == " ") {
-                words++;
-            }
-        }
+        char myC;
 
-        String[] ans = new String[words + 1];
-
-*/
+        iCount = 0;
         for (Integer i = 0; i < sentence.length(); i++) {
             myC = sentence.charAt(i);
-            System.out.println(myC);
-            str = "" + myC;
-            if (str == " ") {
-                System.out.println("hit");
+            if (Character.isWhitespace(myC)) {
                 pt2 = i;
-                str2 = sentence.substring(pt1, pt2);
-                System.out.println("--- " + str2 + " ---");
+                str = sentence.substring(pt1, pt2);
                 break;
-          //      pt1 = pt2 + 1;
-          //      iCount++;
             }
         }
-//      ==========================    fix
-        return str2;
+
+        return str;
     }
 
     /**
@@ -92,7 +105,35 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word with identical contents in reverse order
      */
     public static String reverseFirstWord(String sentence) {
-        return null;
+
+        Integer words = 0;
+        Integer iCount = 0;
+        String str = "";
+        String str2 ="";
+        Integer pt1 = 0;
+        Integer pt2 = 0;
+        char myC;
+
+        iCount = 0;
+        for (Integer i = 0; i < sentence.length(); i++) {
+            myC = sentence.charAt(i);
+            if (Character.isWhitespace(myC)) {
+                pt2 = i;
+                str = sentence.substring(pt1, pt2);
+                break;
+            }
+        }
+            System.out.println(str);
+
+        for (Integer i = 0; i < str.length(); i++) {
+            myC = str.charAt(i);
+
+            str2 = myC + str2;
+
+        }
+
+
+        return str2;
     }
 
     /**

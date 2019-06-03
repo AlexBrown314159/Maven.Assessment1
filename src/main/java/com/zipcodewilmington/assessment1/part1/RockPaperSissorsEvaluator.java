@@ -65,12 +65,32 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
+        String winHand = "";
 
+        if ((handSignOfPlayer1 == "rock") && (handSignOfPlayer2 == "paper")) {
+            winHand = "paper";
+        }
 
+        if ((handSignOfPlayer1 == "rock") && (handSignOfPlayer2 == "scissor")) {
+            winHand = "rock";
+        }
 
+        if ((handSignOfPlayer1 == "paper") && (handSignOfPlayer2 == "rock")) {
+            winHand = "paper";
+        }
 
+        if ((handSignOfPlayer1 == "paper") && (handSignOfPlayer2 == "scissor")) {
+            winHand = "scissor";
+        }
 
+        if ((handSignOfPlayer1 == "scissor") && (handSignOfPlayer2 == "rock")) {
+            winHand = "rock";
+        }
 
-        return null;
+        if ((handSignOfPlayer1 == "scissor") && (handSignOfPlayer2 == "paper")) {
+            winHand = "scissor";
+        }
+        System.out.println(handSignOfPlayer1 + "   " +  handSignOfPlayer2 + "   " + winHand);
+        return winHand;
     }
 }

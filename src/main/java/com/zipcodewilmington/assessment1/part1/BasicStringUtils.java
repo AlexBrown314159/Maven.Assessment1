@@ -96,11 +96,11 @@ public class BasicStringUtils {
 
             }
             else if (Character.isUpperCase(myC)) {
-            
-                }
+                myC = Character.toLowerCase(myC);
+            }
             else if (Character.isLowerCase(myC)) {
-
-                }
+                myC = Character.toUpperCase(myC);
+            }
             myStr = myStr + myC;
             }
 
