@@ -30,25 +30,31 @@ public class ArrayUtils {
      * @return an array with identical content excluding the specified `objectToRemove`
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
-    public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
+    public static Integer[] removeValue(Integer[] objectArray, Integer objectToRemove) {
 
-        Object[] newObj = new Object[objectArray.length];
+        Integer iLess = 0;
 
-        Integer iCount = 0;
         for (Integer i = 0; i < objectArray.length; i++) {
 
             if (objectArray[i] == objectToRemove) {
-                System.out.println("Skip loop");
-            }
-            else {
-                System.out.println("Keep loop");
-                newObj[iCount] = objectArray[i] ;
-                iCount++;
+                iLess++;
             }
 
         }
 
- //       return ArrayUtils.removeValue(objectArray, objectToRemove);
+
+        Integer[] newObj = new Integer[objectArray.length - iLess];
+
+        Integer iCount = 0;
+        for (Integer i = 0; i < objectArray.length; i++) {
+
+            if (objectArray[i] != objectToRemove) {
+                newObj[iCount] = objectArray[i];
+                System.out.println(newObj[iCount]);
+                iCount++;
+            }
+
+        }
 
         return newObj;
     }
@@ -129,29 +135,25 @@ public class ArrayUtils {
      * @return an array containing all elements in `objectArray` and `objectArrayToAdd`
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
-    public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
+    public static Object[] mergeArrays(Integer[] objectArray, Integer[] objectArrayToAdd) {
 
         Integer dim = objectArray.length + objectArrayToAdd.length;
 
-        Object[] str = new Object[dim];
+        Integer myObj[] = new Integer[dim];
 
         Integer iCount = 0;
         for (Integer i = 0; i < objectArray.length; i++) {
 
-            str[iCount] = objectArray[i];
-            System.out.println(str[iCount]);
+            myObj[iCount] = objectArray[i];
             iCount++;
         }
 
         for (Integer i = 0; i < objectArrayToAdd.length; i++) {
 
-            str[iCount] = objectArrayToAdd[i];
-            System.out.println(str[iCount]);
+            myObj[iCount] = objectArrayToAdd[i];
             iCount++;
         }
 
-//        str = ArrayUtils.mergeArrays(objectArray, objectArrayToAdd);
-
-        return str;
+        return myObj;
     }
 }
